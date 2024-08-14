@@ -30,7 +30,6 @@ export default function Header() {
         method: 'POST',
       });
       const data = await res.json();
-      navigate("/sign-in")
       if (!res.ok) {
         console.log(data.message);
       } else {
@@ -53,9 +52,9 @@ export default function Header() {
     <Navbar className='border-b-2'>
       <Link
         to='/'
-        className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
+        className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold light:text-black'
       >
-        <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
+        <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-black'>
           Nayan's
         </span>
         Blog
@@ -105,7 +104,9 @@ export default function Header() {
         ) : (
           <Link to='/sign-in'>
             <Button gradientDuoTone='purpleToBlue' outline>
+              <span className='text-red-500'>
               Sign In
+              </span>
             </Button>
           </Link>
         )}

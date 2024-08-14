@@ -1,8 +1,8 @@
-@import 'flowbite';
+ @import 'flowbite';
 
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
 
 body{
     height: 100vh;
@@ -42,3 +42,11 @@ body{
     color: red;
 }
 
+
+.lop{
+    display: contents;
+}
+
+.input{
+    border-radius: 14px;
+}

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import CallToAction from '../components/CallToAction';
 import { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
+import Wallpaper from '../components/Wallpaper';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -29,6 +30,11 @@ export default function Home() {
           View all posts
         </Link>
       </div>
+
+      <div className='p-3 bg-amber-100 dark:bg-slate-700'>
+        <Wallpaper />
+      </div>
+
       <div className='p-3 bg-amber-100 dark:bg-slate-700'>
         <CallToAction />
       </div>
