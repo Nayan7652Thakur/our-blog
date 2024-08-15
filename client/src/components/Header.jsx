@@ -82,13 +82,14 @@ export default function Header() {
           Blog
         </Link>
         <form onSubmit={handleSubmit}>
-          <TextInput
+          <input
             type="text"
             placeholder="Search..."
             rightIcon={AiOutlineSearch}
-            className="hidden lg:inline"
+            className="search hidden lg:inline text-black"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            
           />
         </form>
         <Button className="w-12 h-10 lg:hidden" color="gray" pill>
@@ -107,18 +108,19 @@ export default function Header() {
             <Dropdown
               arrowIcon={false}
               inline
+              className='nayan regular-progression'
               label={
                 <Avatar alt="user" img={currentUser.profilePicture} rounded />
               }
             >
               <Dropdown.Header>
-                <span className="block text-sm">@{currentUser.username}</span>
-                <span className="block text-sm font-medium truncate">
+                <span className="drop block text-sm">@{currentUser.username}</span>
+                <span className="drop block text-sm font-medium truncate">
                   {currentUser.email}
                 </span>
               </Dropdown.Header>
               <Link to="/dashboard?tab=profile">
-                <Dropdown.Item>Profile</Dropdown.Item>
+                <Dropdown.Item className='drop'>Profile</Dropdown.Item>
               </Link>
               <Dropdown.Divider />
               <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>

@@ -99,3 +99,41 @@ body{
         transform: scale(1);
     }
 }
+
+
+
+.post{
+    border: 2px solid yellow;
+    padding: 6px 9px;
+}
+
+.search{
+    border-radius: 20px;
+}
+
+
+.see{
+    border: 3px solid #ff0195;
+    padding: 8px 13px;
+    font-size: 19px;
+}
+
+.drop{
+    color: rgb(255, 30, 30);
+}
+
+
+
+/* .nayan {
+    width: 120px;
+    height: 120px;
+    float: left;
+    margin-right: 10px;
+    box-sizing: border-box;
+  } */
+  
+  
+  .regular-progression {
+    background: linear-gradient(to top, lime, cyan);
+  }
+  

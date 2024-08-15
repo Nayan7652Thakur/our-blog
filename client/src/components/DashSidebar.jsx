@@ -10,14 +10,14 @@ import {
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { signoutSuccess } from '../redux/user/userSlice';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function DashSidebar() {
   const location = useLocation();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
   const [tab, setTab] = useState('');
+
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const tabFromUrl = urlParams.get('tab');
@@ -25,6 +25,7 @@ export default function DashSidebar() {
       setTab(tabFromUrl);
     }
   }, [location.search]);
+
   const handleSignout = async () => {
     try {
       const res = await fetch('/api/user/signout', {
@@ -40,6 +41,13 @@ export default function DashSidebar() {
       console.log(error.message);
     }
   };
+
+  const getTabClass = (currentTab) => {
+    return tab === currentTab
+      ? 'bg-red-500 text-yellow' // Active tab background red with white text
+      : '';
+  };
+
   return (
     <Sidebar className='w-full md:w-56'>
       <Sidebar.Items>
@@ -49,6 +57,7 @@ export default function DashSidebar() {
               <Sidebar.Item
                 active={tab === 'dash' || !tab}
                 icon={HiChartPie}
+                className={getTabClass('dash')}
                 as='div'
               >
                 Dashboard
@@ -61,6 +70,7 @@ export default function DashSidebar() {
               icon={HiUser}
               label={currentUser.isAdmin ? 'Admin' : 'User'}
               labelColor='dark'
+              className={getTabClass('profile')}
               as='div'
             >
               Profile
@@ -71,6 +81,7 @@ export default function DashSidebar() {
               <Sidebar.Item
                 active={tab === 'posts'}
                 icon={HiDocumentText}
+                className={getTabClass('posts')}
                 as='div'
               >
                 Posts
@@ -83,6 +94,7 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={tab === 'users'}
                   icon={HiOutlineUserGroup}
+                  className={getTabClass('users')}
                   as='div'
                 >
                   Users
@@ -92,6 +104,7 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={tab === 'comments'}
                   icon={HiAnnotation}
+                  className={getTabClass('comments')}
                   as='div'
                 >
                   Comments

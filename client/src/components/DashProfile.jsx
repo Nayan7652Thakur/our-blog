@@ -212,35 +212,39 @@ export default function DashProfile() {
         {imageFileUploadError && (
           <Alert color='failure'>{imageFileUploadError}</Alert>
         )}
-        <TextInput
+        <input
           type='text'
           id='username'
           placeholder='username'
           value={formData.username}
           onChange={handleChange}
+          className='input text-black'
         />
-        <TextInput
+        <input
           type='email'
           id='email'
           placeholder='email'
           value={formData.email}
           onChange={handleChange}
+          className='input text-black'
         />
-        <TextInput 
+        <input 
           type='password'
           id='password'
           placeholder='password'
           value={formData.password}
           onChange={handleChange}
+          className='input text-black'
         />
-        <Button
+        <button
           type='submit'
           gradientDuoTone='purpleToBlue'
           outline
           disabled={loading || imageFileUploading}
+          className='post'
         >
           {loading ? 'Loading...' : 'Update'}
-        </Button>
+        </button>
         {currentUser.isAdmin && (
           <Link to={'/create-post'}>
             <Button
