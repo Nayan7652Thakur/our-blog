@@ -6,6 +6,8 @@
 
 body{
     height: 100vh;
+    margin: 0px;
+    padding: 0px;
 }
 
 .ql-editor{
@@ -49,4 +51,51 @@ body{
 
 .input{
     border-radius: 14px;
+}
+
+/* Add these styles to your CSS file or inside a <style> tag */
+
+.pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures the popup is above other content */
+}
+
+.inner {
+    background-color: #ffffff; /* White background for the inner box */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 0.3s ease-in-out; /* Simple fade-in animation */
+}
+
+.inner span {
+    font-size: 18px;
+    color: #333333;
+}
+
+.inner .mt-20 {
+    margin-top: 20px;
+}
+
+/* Optional: Add a fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

@@ -14,7 +14,7 @@ const Wallpaper = () => {
         </p>
         <Button gradientDuoTone='purpleToPink' className='rounded-tl-xl rounded-bl-none'>
             <a href="https://nayan-home-page-dev.netlify.app/" target='_blank' rel='noopener noreferrer'>
-                100 JavaScript Projects
+               Go to Wallpaper...
             </a>
         </Button>
     </div>
