@@ -137,3 +137,20 @@ body{
     background: linear-gradient(to top, lime, cyan);
   }
   
+
+
+  .sear{
+    color: #ff0195;
+    padding: 3px 3px;
+  }
+
+  .apply{
+    border: 2px solid rgb(56, 239, 81);
+    padding: 7px 9px;
+    border-radius: 12px;
+  }
+
+  .categoryi{
+    background-color: #703a3c9c;
+    padding: 6px 7px;
+  }

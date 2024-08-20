@@ -30,7 +30,7 @@ export default function SignUp() {
       }
       setLoading(false);
       if (res.ok) {
-        navigate('/home');
+        navigate('/');
       }
     } catch (error) {
       setErrorMessage(error.message);

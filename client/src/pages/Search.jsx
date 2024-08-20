@@ -105,44 +105,46 @@ export default function Search() {
       <div className='p-7 border-b md:border-r md:min-h-screen border-gray-500'>
         <form className='flex flex-col gap-8' onSubmit={handleSubmit}>
           <div className='flex   items-center gap-2'>
-            <label className='whitespace-nowrap font-semibold'>
+            <label className='sear whitespace-nowrap font-semibold'>
               Search Term:
             </label>
-            <TextInput
+            <input
               placeholder='Search...'
               id='searchTerm'
               type='text'
               value={sidebarData.searchTerm}
               onChange={handleChange}
+              className='sear'
             />
           </div>
           <div className='flex items-center gap-2'>
-            <label className='font-semibold'>Sort:</label>
-            <Select onChange={handleChange} value={sidebarData.sort} id='sort'>
+            <label className='sear font-semibold'>Sort:</label>
+            <select onChange={handleChange} value={sidebarData.sort} id='sort' className='categoryi'>
               <option value='desc'>Latest</option>
               <option value='asc'>Oldest</option>
-            </Select>
+            </select>
           </div>
           <div className='flex items-center gap-2'>
-            <label className='font-semibold'>Category:</label>
-            <Select
+            <label className='sear font-semibold'>Category:</label>
+            <select
               onChange={handleChange}
               value={sidebarData.category}
               id='category'
+              className='categoryi'
             >
               <option value='uncategorized'>Uncategorized</option>
               <option value='reactjs'>React.js</option>
               <option value='nextjs'>Next.js</option>
               <option value='javascript'>JavaScript</option>
-            </Select>
+            </select>
           </div>
-          <Button type='submit' outline gradientDuoTone='purpleToPink'>
+          <button type='submit' outline className='apply'>
             Apply Filters
-          </Button>
+          </button>
         </form>
       </div>
       <div className='w-full'>
-        <h1 className='text-3xl font-semibold sm:border-b border-gray-500 p-3 mt-5 '>
+        <h1 className='sear text-3xl font-semibold sm:border-b border-gray-500 p-3 mt-5 '>
           Posts results:
         </h1>
         <div className='p-7 flex flex-wrap gap-4'>
