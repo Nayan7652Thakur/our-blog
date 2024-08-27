@@ -128,6 +128,9 @@ export default function Header() {
           ) : (
             <>
               {showPopup && <Popup onClose={handlePopupClose} />}
+              <Link to='/sign-up'>
+              <button>Sign-up</button>
+              </Link>
             </>
           )}
           <Navbar.Toggle />
